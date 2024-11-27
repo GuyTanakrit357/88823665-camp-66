@@ -4,45 +4,84 @@
 <table>
     <tr>
         <form>
-            <th><div align="left"><label for="fname">ชื่อ</label></div></th>
+            <th>
+                <div align="left"><label for="fname">ชื่อ</label></div>
+            </th>
             <td><input type="text" id="fnaem" name="fname"></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left"><label for="lname">สกุล</label></div></th>
+            <th>
+                <div align="left"><label for="lname">สกุล</label></div>
+            </th>
             <td><input type="text" id="lname" name="lname"></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left">วัน/เดือน/ปีเกิด</div></th>
+            <th>
+                <div align="left">วัน/เดือน/ปีเกิด</div>
+            </th>
             <td><input type="date" name=""></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left"><label for="age">อายุ</label></div></th>
+            <th>
+                <div align="left"><label for="age">อายุ</label></div>
+            </th>
             <td><input type="number" id="age" name="age"></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left"><label for="myfile">รูป</label></div></th>
+            <th>
+                <div align="left"><label for="myfile">รูป</label></div>
+            </th>
             <td><input type="file" id="myfile" name="myfile"></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left"><label for="address">ที่อยู่</label></div></th>
+            <th>
+                <div align="left"><label for="address">ที่อยู่</label></div>
+            </th>
             <td><input type="text" id="address" name="address" style="width: 100%;height: 125px;"></td>
         </form>
     </tr>
     <tr>
         <form>
-            <th><div align="left"><label for="color">สีที่ชอบ</label></div></th>
+            <th>
+                <div align="left"><label for="color">สีที่ชอบ</label></div>
+            </th>
+            <td><select name="color" id="color">
+                    <option value="สีแดง">สีแดง</option>
+                    <option value="สีดำ">สีดำ</option>
+                    <option value="สีเหลือง">สีเหลือง</option>
+                    <option value="สีน้ำเงิน">สีน้ำเงิน</option>
+                    <option value="สีขาว">สีขาว</option>
+            </td>
         </form>
     </tr>
+    <table>
+        <tr>
+            <form>
+                <th>
+                    <div align="left"><label for="radio">แนวเพลงที่ชอบ</label></div>
+                <td><input type="radio" id="jazz" name="เพลงที่ชอบ" value="JAZZ">
+                    <label for="jazz">Jazz</label>
+                </td>
+                <td><input type="radio" id="pop" name="เพลงที่ชอบ" value="POP">
+                    <label for="pop">Pop</label>
+                </td>
+                <td><input type="radio" id="rock" name="เพลงที่ชอบ" value="ROCK">
+                    <label for="rock">rock</label>
+                </td>
+                </th>
+            </form>
+        </tr>
+    </table>
 </table>
 
 </html>
