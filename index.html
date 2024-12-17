@@ -1,106 +1,130 @@
-<html>
-<meta charset="UTF-8" />
-<h1>Workshop #HTML - FORM</h1>
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop #HTML - FORM</title>
+    <link rel="stylesheet" href="/88823665-camp-66/mystyle.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<div>1034123</div>
+
 <body>
-<table>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="fname">ชื่อ</label></div>
-            </th>
-            <td><input type="text" id="fnaem" name="fname"></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="lname">สกุล</label></div>
-            </th>
-            <td><input type="text" id="lname" name="lname"></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left">วัน/เดือน/ปีเกิด</div>
-            </th>
-            <td><input type="date" name=""></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="age">อายุ</label></div>
-            </th>
-            <td><input type="number" id="age" name="age"></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="myfile">รูป</label></div>
-            </th>
-            <td><input type="file" id="myfile" name="myfile"></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="address">ที่อยู่</label></div>
-            </th>
-            <td><textarea id="address" name="adr" rows="4" cols="50"></textarea></td>
-        </form>
-    </tr>
-    <tr>
-        <form>
-            <th>
-                <div align="left"><label for="color">สีที่ชอบ</label></div>
-            </th>
-            <td><select name="color" id="color">
-                    <option value="สีแดง">สีแดง</option>
-                    <option value="สีดำ">สีดำ</option>
-                    <option value="สีเหลือง">สีเหลือง</option>
-                    <option value="สีน้ำเงิน">สีน้ำเงิน</option>
-                    <option value="สีขาว">สีขาว</option>
-            </td>
-        </form>
-    </tr>
-    <table>
-        <tr>
-            <form>
-                <th>
-                    <div align="left"><label for="radio">แนวเพลงที่ชอบ</label></div>
-                <td><input type="radio" id="radio" name="เพลงที่ชอบ" value="JAZZ">
-                    <label for="jazz">Jazz</label>
-                </td>
-                <td><input type="radio" id="radio" name="เพลงที่ชอบ" value="POP">
-                    <label for="pop">Pop</label>
-                </td>
-                <td><input type="radio" id="radio" name="เพลงที่ชอบ" value="ROCK">
-                    <label for="rock">rock</label>
-                </td>
-                </th>
-            </form>
-        </tr>
-    </table>
-    <tr>
-        <table>
-            <form>
-                <td><input type="checkbox" id="accress" name="accress" value="accress">
-                    <label for="accress">ยินยอมให้เก็บข้อมูล</label>
-                </td>
-            </form>
-        </table>
-    </tr>
-</table>
-<form>
-    <tr>
-        <td><input type="reset" value="Reset">
-            <label
-                for="space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        </td>
-        <td><input type="submit" value="Submit"></td>
-    </tr>
-</form>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: rgb(176, 176, 176);
+        }
+
+        h1 {
+            font-family: 'kanit', sans-serif;
+        }
+
+        th {
+            font-family: 'kanit', sans-serif;
+        }
+
+        input:focus,
+        textarea:focus {
+            background-color: yellow;
+            border-color: yellow;
+        }
+
+        input:hover,
+        textarea:hover {
+            background-color: aqua;
+            border-color: aqua;
+        }
+
+        select:hover {
+            background-color: pink;
+            border-color: rgb(248, 82, 109);
+        }
+    </style>
 </body>
+
+<body>
+    <h1>Workshop #HTML - FORM</h1>
+    <form>
+        <table>
+            <!-- ชื่อ -->
+            <tr>
+                <th align="left"><label for="fname">ชื่อ</label></th>
+                <td><input type="text" id="fname" name="fname"></td>
+            </tr>
+            <!-- สกุล -->
+            <tr>
+                <th align="left"><label for="lname">สกุล</label></th>
+                <td><input type="text" id="lname" name="lname"></td>
+            </tr>
+            <!-- วัน/เดือน/ปีเกิด -->
+            <tr>
+                <th align="left"><label for="dob">วัน/เดือน/ปีเกิด</label></th>
+                <td><input type="date" id="dob" name="dob"></td>
+            </tr>
+            <!-- อายุ -->
+            <tr>
+                <th align="left"><label for="age">อายุ</label></th>
+                <td><input type="number" id="age" name="age"></td>
+            </tr>
+            <!-- รูป -->
+            <tr>
+                <th align="left"><label for="myfile">รูป</label></th>
+                <td><input type="file" id="myfile" name="myfile"></td>
+            </tr>
+            <!-- ที่อยู่ -->
+            <tr>
+                <th align="left"><label for="address">ที่อยู่</label></th>
+                <td><textarea id="address" name="address" rows="4" cols="50"></textarea></td>
+            </tr>
+            <!-- สีที่ชอบ -->
+            <tr>
+                <th align="left"><label for="color">สีที่ชอบ</label></th>
+                <td>
+                    <select name="color" id="color">
+                        <option value="สีแดง">สีแดง</option>
+                        <option value="สีดำ">สีดำ</option>
+                        <option value="สีเหลือง">สีเหลือง</option>
+                        <option value="สีน้ำเงิน">สีน้ำเงิน</option>
+                        <option value="สีขาว">สีขาว</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- แนวเพลงที่ชอบ -->
+            <tr>
+                <th align="left">แนวเพลงที่ชอบ</th>
+                <td>
+                    <input type="radio" id="jazz" name="music" value="JAZZ">
+                    <label for="jazz">Jazz</label>
+                    <input type="radio" id="pop" name="music" value="POP">
+                    <label for="pop">Pop</label>
+                    <input type="radio" id="rock" name="music" value="ROCK">
+                    <label for="rock">Rock</label>
+                </td>
+            </tr>
+            <!-- การยินยอม -->
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="consent" name="consent" value="agree">
+                    <label for="consent">ยินยอมให้เก็บข้อมูล</label>
+                </td>
+            </tr>
+            <!-- ปุ่ม Reset และ Submit -->
+            <tr>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
 </html>
