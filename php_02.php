@@ -6,20 +6,47 @@
     </head>
     <body>
         <div class="container mt-5">
-            <h1>แสดงเลขคู่เลขคี่ตั้งแต่ 1-100</h1>
-            <?php 
-            for ($i = 1; $i <= 100; $i++) {
-                if ($i % 2 == 0) {
-                    $result = "Even";
+            <h1 class="mb-4">ตรวจสอบเลขคู่และเลขคี่</h1>
+            
+            <!-- Input Form -->
+            <form method="post" class="mb-4">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="start" class="form-label">Start Number</label>
+                        <input type="number" class="form-control" id="start" name="start" required>
+                    </div>
+                    <div class="col">
+                        <label for="end" class="form-label">End Number</label>
+                        <input type="number" class="form-control" id="end" name="end" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // Retrieve values from the form
+                $start = intval($_POST['start']);
+                $end = intval($_POST['end']);
+
+                if ($start > $end) {
+                    echo "<div class='alert alert-danger'>Start number must be less than or equal to the end number.</div>";
                 } else {
-                    $result = "Odd";
+                    echo "<h2>Results:</h2>";
+                    echo "<div class='row fw-bold border-bottom pb-2 mb-2'>
+                            <div class='col-6 text-end'>Number</div>
+                            <div class='col-6 text-start'>Type</div>
+                          </div>";
+
+                    // Generate and display results
+                    for ($i = $start; $i <= $end; $i++) {
+                        $result = ($i % 2 == 0) ? "Even" : "Odd";
+                        echo "<div class='row border-bottom py-2'>
+                                <div class='col-6 text-end'>$i</div>
+                                <div class='col-6 text-start'>$result</div>
+                              </div>";
+                    }
                 }
-            ?>
-            <div class="row">
-                <div class="h2 col text-end"><?php echo "$i ="; ?></div>
-                <div class="h2 col text-start"><?php echo $result; ?></div>
-            </div>
-            <?php 
             }
             ?>
         </div>
