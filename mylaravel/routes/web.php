@@ -14,3 +14,6 @@ Route::get('/hello', function () {
 
 Route::get("/mycontroller/{id?}",
 [MyController::class,"myfunction"]);
+
+Route::post("/mycontroller/{id?}",
+[MyController::class,""]);
