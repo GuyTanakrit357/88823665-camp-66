@@ -16,4 +16,4 @@ Route::get("/mycontroller/{id?}",
 [MyController::class,"myfunction"]);
 
 Route::post("/mycontroller/{id?}",
-[MyController::class,""]);
+[MyController::class,"myfunction"]);
