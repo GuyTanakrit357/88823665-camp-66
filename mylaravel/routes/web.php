@@ -2,18 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LaravelForm;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 Route::get('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
 Route::post('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
 
 Route::get('/login',
-[App\Http\Controllers\LoginController::class, 'index']);
+[LoginController::class, 'index']);
 
 Route::get('/home',
-[App\Http\Controllers\HomeController::class, 'index']);
+[HomeController::class, 'index']);
 
 Route::get('/register',
-[App\Http\Controllers\RegisterController::class, 'index']);
+[RegisterController::class, 'index']);
+Route::post('/register',
+[RegisterController::class, 'create']);
 
 Route::get('/',
-[App\Http\Controllers\HomeController::class, 'index']);
+[HomeController::class, 'index']);
+
+Route::get('/users',
+[UserController::class, 'index']);
