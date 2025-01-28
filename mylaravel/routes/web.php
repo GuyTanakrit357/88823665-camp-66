@@ -27,3 +27,5 @@ Route::get('/',
 
 Route::get('/users',
 [UserController::class, 'index']);
+Route::get('/users/{id}',
+[UserController::class, 'edit']);
