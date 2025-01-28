@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop #HTML - Form</title>
+</head>
+
+<body>
+    <h1>Workshop #HTML - FORM</h1>
+    <hr>
+    <form>
+        <table>
+            <tr>
+                <td><label for="fname">ชื่อ:</label></td>
+                <td><input type="text" id="fname" name="fname"></td>
+            </tr>
+            <tr>
+
+
+
+
+
+                
+                <td><label for="lname">สกุล:</label></td>
+                <td><input type="text" id="lname" name="lname"></td>
+            </tr>
+            <tr>
+                <td><label for="dob">วัน/เดือน/ปีเกิด:</label></td>
+                <td><input type="date" id="dob" name="dob"></td>
+            </tr>
+            <tr>
+                <td><label for="age">อายุ:</label></td>
+                <td><input type="number" id="age" name="age" min="0"></td>
+            </tr>
+            <tr>
+                <td>เพศ:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">ชาย</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">หญิง</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="myfile">รูป:</label></td>
+                <td><input type="file" id="myfile" name="myfile"></td>
+            </tr>
+            <tr>
+                <td><label for="address">ที่อยู่:</label></td>
+                <td><textarea id="address" name="address" rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="colour">สีที่ชอบ:</label></td>
+                <td>
+                    <select id="colour" name="colour">
+                        <option value="สีแดง">สีแดง</option>
+                        <option value="สีเขียว">สีเขียว</option>
+                        <option value="สีฟ้า">สีฟ้า</option>
+                        <option value="สีม่วง">สีม่วง</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>แนวเพลงที่ชอบ:</td>
+                <td>
+                    <input type="radio" id="pop" name="music" value="pop">
+                    <label for="pop">Pop</label>
+                    <input type="radio" id="rock" name="music" value="rock">
+                    <label for="rock">Rock</label>
+                    <input type="radio" id="jazz" name="music" value="jazz">
+                    <label for="jazz">Jazz</label>
+                </td>
+            </tr>
+            <tr>
+                <td>การยินยอม:</td>
+                <td>
+                    <input type="checkbox" id="consent" name="consent" value="yes">
+                    <label for="consent">ยินยอมให้เก็บข้อมูล</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="reset">reset</button>
+                </td>
+                <td><button type="submit">submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <img src="meme.png" alt="รูป meme">
+</body>
+
+</html>

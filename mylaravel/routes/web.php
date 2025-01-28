@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
+use App\Http\Controllers\Mycontroller;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
+Route::post('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
 
-Route::get('/hello', function () {
-    return "<h1>Hello World</h1>" . PHP_EOL;
-});
+Route::get('/login',
+[App\Http\Controllers\LoginController::class, 'index']);
 
+Route::get('/home',
+[App\Http\Controllers\HomeController::class, 'index']);
 
-Route::get("/mycontroller/{id?}",
-[MyController::class,"myfunction"]);
+Route::get('/register',
+[App\Http\Controllers\RegisterController::class, 'index']);
 
-Route::post("/mycontroller/{id?}",
-[MyController::class,"myfunction"]);
+Route::get('/',
+[App\Http\Controllers\HomeController::class, 'index']);
