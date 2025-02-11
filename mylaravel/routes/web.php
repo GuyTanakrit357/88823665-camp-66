@@ -48,3 +48,7 @@ Route ::put ('/user',
 
 Route::delete('/user/{id}',
 [UserController::class, 'delete'])->name('user.destroy');
+
+Route::post('login',
+[LoginController::class,'login']);
+
