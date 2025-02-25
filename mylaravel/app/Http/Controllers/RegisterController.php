@@ -22,7 +22,7 @@ class RegisterController extends Controller
 
         User::create([
             'name' => $req->name,
-            'email' => $req->name,
+            'email' => $req->email,
             'password' => $req->password
         ]);
         return redirect('/user');

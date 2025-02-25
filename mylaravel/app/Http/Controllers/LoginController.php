@@ -3,31 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\User;
-
 use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
-    public function index()
-    {
+    //
+    function index(){
         return view('login');
-
     }
-
     function login(Request $req){
-        //echo "<pre>";
-        //print_r($req->email);
-        //print_r($req->password);
-        //echo "</pre>";
-        $user = User::where('email', $req->email)->get();
-        if
-        (Hash::check($req->password, $user ->password)){
-
+        // print_r ($req->email);
+        // print_r ($req->password);
+        $user = User::where('email', $req->email)->first();
+        if(Hash::check($req->password, $user->password)){
+            session()->forget('error');
+            session(['user' => $user]);
+            return redirect('/');
         }else{
-            return redirect('/login')->with('error','Invalid Credentials');
+            session(['error'=> 'ข้อมูลการเข้าสู่ระบบไม่ถูกต้อง']);
+            return view('login', ['email'=>$req->email]);
+            // return redirect('/login');
         }
-        //return redirect('/');
     }
 }
-
