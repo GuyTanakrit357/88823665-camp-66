@@ -3,30 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\User;
+use  App\Models\User;
 class UserController extends Controller
 {
-
     function index(){
         $users = User::all();
-        return view('User',['users'=>$users]);
+        return view('user',['users' => $users]);
     }
     function edit($id){
-        $user = User::find($id);
-        return view('user_edit',['user'=>$user]);
+         $user = User::find($id);
+        return view('/edit_user',['user' => $user]);
     }
-    function saveEdit(Request $req){
-        $user = User::find($req->id);
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->password = ($req->password)==null?$user->password:$req->password;
-        $user->save();
-        return redirect('user');
+    function edit_user(Request $req){
+        $user = User::find($req -> id);
+        $user ->name = $req -> name;
+        $user ->email = $req -> email;
+        $user ->password = ($req -> password == null)?$user->password:$req ->password;
+        $user ->save();
+        return redirect('/user');
     }
     function delete(Request $req){
-        $user = User::find($req->id);
-        $user->delete();
+     User::find($req -> id)->delete();
         return redirect('/user');
     }
 }

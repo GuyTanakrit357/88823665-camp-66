@@ -1,8 +1,7 @@
-@extends('layout.default')
 <!--end::Head-->
 <!--begin::Body-->
 
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<body class="layout-fixed sidebar-expand-lg" style="background-color: #FAE7B5;">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!--begin::Header-->
@@ -673,15 +672,17 @@
                                 <td>{{$index + 1}}</td>
                                 <td>{{$category->name}}</td>
                                 <td>
-                                <?php    foreach ($products->where('category_id', $category->id) as $product) {
-                                    $name  = $user->where('id',$product->user_id)->first();
+                                <?php    
+                                $name= '';
+                                foreach ($products->where('category_id', $category->id) as $product) { 
+                                    $name  = $user->where('id',$product->user_id)->first()->name;
                                     ?>
                                     <ul>
                                         <li>{{$product->name}}</li>
                                     </ul>
                                     <?php } ?>
                                 </td>
-                                <td>{{$name->name}}</td>
+                                <td>{{$name}}</td>
                             </tr>
                             <?php }?>
                         </tbody>
@@ -703,7 +704,7 @@
                                 })
 
                                 $(document).on('click', '.btn-delete-product', function () {
-                                    // count--;
+                                    // count--; 
                                     $(this).parent().parent().remove();
                                 })
                             });

@@ -15,12 +15,11 @@ class CheckLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = session()->get('user');
+        $user =  session()->get('user');
         if(!isset($user)){
-            return redirect('/login');
+            return redirect("/login");
+        }
 
-    }
-    //
         return $next($request);
-}
+    }
 }

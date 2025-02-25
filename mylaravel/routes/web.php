@@ -30,11 +30,11 @@ Route::post('/login',  [LoginController::class,'login']);
 
 
 Route::get('/user/{id}',  [UserController::class,'edit']);
-Route::put('/user' ,[UserController::class, 'edit_user']);//update
+Route::put('/user' ,[UserController::class, 'edit_user']);
 Route::delete('/user',[UserController::class, 'delete']);
 
-// Route::get('/login',function(){
-//     session()->forget('user');
-//     session()->flush();
-// return redirect('/login');
-// });
+Route::get('/logout',function(){
+    session()->forget('user');
+    session()->flush();
+return redirect('/login');
+});

@@ -14,7 +14,6 @@ class ProductController extends Controller
         $Users = User::all();
         return view('/product',['user'=>$Users,'categorys'=>$category,'products'=>$product]);
     }
-
     function store(Request $req){
         $stock = new Categories();
         $stock ->name = $req->category;
@@ -25,9 +24,7 @@ class ProductController extends Controller
             $suppile->category_id = $stock->id;
             $suppile->user_id = session()->get('user')->id;
             $suppile->save();
-        }
+        }  
         return redirect("/product");
     }
-
-
 }
